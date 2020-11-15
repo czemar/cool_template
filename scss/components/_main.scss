@@ -1,0 +1,118 @@
+$title-font-color: $blue-dark;
+$subtitle-font-color: $blue-dark;
+$base-font-color: $black;
+$base-font-family: $base-font;
+
+.main {
+    padding: 5vh 25px 7vh;
+    font-size: 18px;
+    font-family: $base-font-family;
+    background-image: url("../img/mainBgc@1x.png");
+    background-size: cover;
+    background-position-x: left;
+    background-position-y: bottom;
+
+    // portrait
+    @include mq("xxsmall", "portrait") {
+        font-size: 20px;
+    }
+
+    @include mq("small", "portrait") {
+        font-size: 23px;
+    }
+
+    @include mq("large", "portrait") {
+        font-size: 26px;
+        padding: 5vh 10vw 7vh;
+        background-position-x: 80%;
+    }
+
+    @include mq("xlarge", "portrait") {
+        font-size: 32px;
+    }
+
+    @include mq("xxlarge", "portrait") {
+        font-size: 42px;
+    }
+
+    // landscape
+    @include mq("ultrasmall", "landscape") {
+        font-size: 16px;
+    }
+
+    @include mq("small", "landscape") {
+        background-position-x: 80%;
+        font-size: 19px;
+    }
+
+    @include mq("medium", "landscape") {
+        padding: 3vh 0 7vh 15vw;
+    }
+
+    @include mq("large", "landscape") {
+        font-size: 24px;
+    }
+
+    @include mq("xlarge", "landscape") {
+        background-position-x: right;
+        background-position-y: bottom;
+        padding: 3vh 0 7vh 17vw;
+    }
+
+    @include mq("xxlarge", "landscape") {
+        font-size: 30px;
+    }
+
+    @include mq("xxxlarge", "landscape") {
+        font-size: 40px;
+    }
+
+    @include mq("ularge", "landscape") {
+        font-size: 54px;
+    }
+
+    &__content {
+        // portrait
+        @include mq("large", "portrait") {
+            max-width: 50vw;
+        }
+
+        // landscape
+        @include mq("small", "landscape") {
+            max-width: 50vw;
+        }
+
+        @include mq("medium", "landscape") {
+            max-width: 35vw;
+        }
+
+        @include mq("large", "landscape") {
+            max-width: 40vw;
+        }
+    }
+    &__title {
+        color: $title-font-color;
+        font-size: 1.8em;
+    }
+    &__subtitle {
+        font-size: 1.15em;
+        line-height: 0.5em;
+        font-weight: 400;
+        color: $subtitle-font-color;
+    }
+    &__text {
+        font-size: 0.7em;
+        line-height: 1.45em;
+        margin: 1.5em 0 0 0;
+        color: $base-font-color;
+
+        &--bolder {
+            font-weight: 700;
+        }
+    }
+    &__button {
+        margin: 2em 0 0;
+        padding: 0.6em 2.5em;
+        font-size: 0.7em;
+    }
+}

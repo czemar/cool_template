@@ -1,0 +1,202 @@
+$cover-background: $blue-dark;
+$title-color: $orange;
+$subtitle-color: $white;
+$base-font-family: $base-font;
+
+.banner {
+    position: relative;
+    padding: 35vh 0 10vh;
+    min-height: 100vh;
+    background-image: url("../img/banner@1x.png");
+    background-size: cover;
+    background-position: 35% center;
+    background-attachment: fixed;
+    font-family: $base-font-family;
+    font-size: 20px;
+
+    // portrait
+    @include mq("small", "portrait") {
+        font-size: 28px;
+    }
+
+    @include mq("large", "portrait") {
+        font-size: 35px;
+    }
+
+    @include mq("xlarge", "portrait") {
+        font-size: 40px;
+        background-image: url("../img/banner@2x.png");
+    }
+
+    @include mq("xxlarge", "portrait") {
+        font-size: 50px;
+    }
+
+    // landscape
+    @include mq("ultrasmall", "landscape") {
+        font-size: 17px;
+    }
+
+    @include mq("medium", "landscape") {
+        padding: 0;
+        font-size: 22px;
+        min-height: 80vh;
+    }
+
+    @include mq("large", "landscape") {
+        font-size: 30px;
+    }
+
+    @include mq("xlarge", "landscape") {
+        font-size: 34px;
+    }
+
+    @include mq("xxlarge", "landscape") {
+        font-size: 48px;
+    }
+
+    @include mq("xxxlarge", "landscape") {
+        font-size: 56px;
+    }
+
+    @include mq("ularge", "landscape") {
+        font-size: 75px;
+    }
+
+    &__cover {
+        padding: 25px 10px;
+        background-color: rgba($cover-background, 0.75);
+
+        // portrait
+        @include mq("small", "portrait") {
+            padding: 30px 10vw;
+        }
+
+        // landscape
+        @include mq("ultrasmall", "landscape") {
+            padding: 15px 10px;
+        }
+
+        // landscape
+        @include mq("medium", "landscape") {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px 0 25px 15vw;
+        }
+
+        @include mq("large", "landscape") {
+            padding: 40px 0 40px 15vw;
+        }
+
+        @include mq("xlarge", "landscape") {
+            padding: 40px 0 40px 17vw;
+        }
+
+        @include mq("xxlarge", "landscape") {
+            padding: 60px 0 80px 17vw;
+        }
+    }
+
+    &__title {
+        color: $title-color;
+        font-size: 1.2em;
+
+        // landscape
+        @include mq("medium", "landscape") {
+            max-width: 45%;
+            font-size: 1.4em;
+        }
+
+        @include mq("large", "landscape") {
+            margin: 0.4em 0;
+        }
+    }
+
+    &__subtitle {
+        color: $subtitle-color;
+        font-size: 1em;
+
+        // landscape
+        @include mq("medium", "landscape") {
+            max-width: 45%;
+            font-size: 0.8em;
+        }
+
+        @include mq("large", "landscape") {
+            max-width: 35%;
+        }
+    }
+
+    &__form {
+        width: 85%;
+        padding: 20px;
+        font-size: 16px;
+        margin: 20vh auto 0;
+
+        // portrait
+        @include mq("xxsmall", "portrait") {
+            font-size: 19px;
+        }
+
+        @include mq("small", "portrait") {
+            font-size: 24px;
+            max-width: 60vw;
+        }
+
+        @include mq("large", "portrait") {
+            max-width: 40vw;
+            font-size: 26px;
+        }
+
+        @include mq("xlarge", "portrait") {
+            font-size: 33px;
+        }
+
+        @include mq("xxlarge", "portrait") {
+            font-size: 40px;
+            padding: 35px;
+        }
+
+        // landscape
+        @include mq("ultrasmall", "landscape") {
+            max-width: 70vw;
+        }
+
+        @include mq("xsmall", "landscape") {
+            max-width: 45vw;
+        }
+
+        @include mq("medium", "landscape") {
+            position: absolute;
+            right: 15%;
+            bottom: 10%;
+            max-width: 30vw;
+        }
+
+        @include mq("large", "landscape") {
+            max-width: 25vw;
+        }
+
+        @include mq("xlarge", "landscape") {
+            max-width: 22vw;
+            bottom: 15%;
+            right: 20%;
+            font-size: 18px;
+            padding: 35px;
+        }
+
+        @include mq("xxlarge", "landscape") {
+            font-size: 28px;
+        }
+
+        @include mq("xxxlarge", "landscape") {
+            font-size: 35px;
+        }
+
+        @include mq("ularge", "landscape") {
+            font-size: 45px;
+        }
+    }
+}

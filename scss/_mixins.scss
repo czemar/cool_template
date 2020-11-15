@@ -1,0 +1,23 @@
+@mixin mq($breakpoint, $orientation) {
+    @if ($orientation == "portrait") {
+        $size: map-get($breakpoints-portrait, $breakpoint);
+        @if ($size) {
+            @media #{'#{$size} and (orientation: #{$orientation})'} {
+                @content;
+            }
+        } @else {
+            @error 'Breakpoint: "#{$breakpoint}" - does not exist';
+        }
+    } @else if($orientation == "landscape") {
+        $size: map-get($breakpoints-landscape, $breakpoint);
+        @if ($size) {
+            @media #{'#{$size} and (orientation: #{$orientation})'} {
+                @content;
+            }
+        } @else {
+            @error 'Breakpoint: "#{$breakpoint}" - does not exist';
+        }
+    } @else {
+        @error 'Orientation: #{$orientation} - is incorrect';
+    }
+}

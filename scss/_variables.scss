@@ -1,0 +1,55 @@
+$breakpoints-portrait: (
+    xxsmall: (
+        min-width: 360px,
+    ),
+    xsmall: (
+        min-width: 460px,
+    ),
+    small: (
+        min-width: 640px,
+    ),
+    medium: (
+        min-width: 800px,
+    ),
+    large: (
+        min-width: 1024px,
+    ),
+    xlarge: (
+        min-width: 1366px,
+    ),
+    xxlarge: (
+        min-width: 1920px,
+    ),
+);
+$breakpoints-landscape: (
+    ultrasmall: (
+        max-width: 480px,
+    ),
+    xxsmall: (
+        min-width: 480px,
+    ),
+    xsmall: (
+        min-width: 640px,
+    ),
+    small: (
+        min-width: 800px,
+    ),
+    medium: (
+        min-width: 1024px,
+    ),
+    large: (
+        min-width: 1366px,
+    ),
+    xlarge: (
+        min-width: 1650px,
+    ),
+    xxlarge: (
+        min-width: 2560px,
+    ),
+    xxxlarge: (
+        min-width: 3072px,
+    ),
+    ularge: (
+        min-width: 4096px,
+    ),
+);

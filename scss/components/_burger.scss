@@ -1,0 +1,58 @@
+$burger-color: $navyblue;
+
+.burger {
+    position: relative;
+
+    &--active &__frame {
+        &--1 {
+            width: 45%;
+            transform: rotate(-45deg) translateY(-50%) translateX(-25%);
+        }
+
+        &--2 {
+            width: 115%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &--3 {
+            width: 45%;
+            transform: rotate(-45deg) translateY(50%) translateX(+25%);
+        }
+    }
+
+    &__frame {
+        position: absolute;
+        height: 2px;
+        width: 50%;
+        background-color: $burger-color;
+        transition: 0.3s ease-in;
+
+        // portrait
+        @include mq("small", "portrait") {
+            height: 3px;
+        }
+
+        @include mq("xxlarge", "portrait") {
+            height: 5px;
+        }
+
+        &--1 {
+            top: 0%;
+            right: 0%;
+            transform-origin: top right;
+        }
+
+        &--2 {
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        &--3 {
+            bottom: 0%;
+            left: 0%;
+            transform-origin: bottom left;
+        }
+    }
+}

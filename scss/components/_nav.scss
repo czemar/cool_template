@@ -1,0 +1,199 @@
+$main-background-color: $white;
+$base-font-color: $blue-dark;
+$base-background-color: $white;
+$base-font-family: $base-font;
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+    height: 8vh;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: $main-background-color;
+    font-family: $base-font-family;
+
+    // portrait
+    @include mq("xxsmall", "portrait") {
+        padding: 8px 20px;
+    }
+
+    @include mq("small", "portrait") {
+        height: 7vh;
+        font-size: 25px;
+    }
+
+    @include mq("large", "portrait") {
+        font-size: 30px;
+        padding: 8px 35px;
+    }
+
+    @include mq("xlarge", "portrait") {
+        font-size: 38px;
+    }
+
+    @include mq("xxlarge", "portrait") {
+        height: 5vh;
+        padding: 8px 50px;
+        font-size: 48px;
+    }
+
+    // landscape
+    @include mq("ultrasmall", "landscape") {
+        height: 12vh;
+        padding: 5px 15px;
+        font-size: 16px;
+    }
+
+    @include mq("xxsmall", "landscape") {
+        height: 12vh;
+    }
+
+    @include mq("xsmall", "landscape") {
+        height: 14vh;
+        padding: 10px 20px;
+    }
+
+    @include mq("small", "landscape") {
+        height: 10vh;
+    }
+
+    @include mq("medium", "landscape") {
+        height: 8vh;
+        font-size: 14px;
+        padding: 10px 15vw;
+        align-items: stretch;
+    }
+
+    @include mq("large", "landscape") {
+        font-size: 19px;
+    }
+
+    @include mq("xlarge", "landscape") {
+        font-size: 22px;
+    }
+
+    @include mq("xxlarge", "landscape") {
+        font-size: 32px;
+    }
+
+    @include mq("xxxlarge", "landscape") {
+        font-size: 45px;
+    }
+
+    @include mq("ularge", "landscape") {
+        font-size: 58px;
+    }
+
+    &__logo {
+        height: 100%;
+    }
+    &__logo-link {
+        height: 100%;
+        text-decoration: none;
+    }
+    &__menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 100%;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+        z-index: 5;
+        transition: 0.4s;
+        background-color: $base-background-color;
+        list-style: none;
+
+        &--active {
+            bottom: 0;
+        }
+
+        // landscape
+
+        @include mq("medium", "landscape") {
+            position: static;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: stretch;
+            flex-grow: 1;
+        }
+    }
+
+    &__item {
+        font-size: 1em;
+        line-height: 2.5em;
+
+        // landscape
+        @include mq("medium", "landscape") {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            line-height: 1em;
+        }
+    }
+
+    &__link {
+        position: relative;
+        text-decoration: none;
+        color: $base-font-color;
+        margin: 0 0 4px 0;
+
+        &:visited {
+            color: $base-font-color;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -20%;
+            left: 50%;
+            right: 50%;
+            height: 2px;
+            background-color: $navyblue;
+            transition: 0.4s;
+        }
+
+        &:hover {
+            &::after {
+                left: 0%;
+                right: 0%;
+            }
+        }
+    }
+
+    &__burger {
+        width: 20px;
+        height: 20px;
+        z-index: 6;
+
+        // portrait
+        @include mq("small", "portrait") {
+            width: 30px;
+            height: 30px;
+        }
+
+        @include mq("xxlarge", "portrait") {
+            width: 45px;
+            height: 45px;
+        }
+
+        // landscape
+        @include mq("medium", "landscape") {
+            display: none;
+        }
+    }
+}
